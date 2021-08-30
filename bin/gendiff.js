@@ -9,6 +9,7 @@ program
   .description('Compares two configuration files and shows a difference.')
   .option('-f, --format [type]', 'output format')
   .action((filepath1, filepath2) => {
-    gendiff(filepath1, filepath2);
+    const [, result] = gendiff(filepath1, filepath2);
+    console.log(result);
   })
-  .parse();
+  .parse(process.argv);
