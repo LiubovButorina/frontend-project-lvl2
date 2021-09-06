@@ -7,7 +7,7 @@ const getFileData = (filepath) => {
   return data;
 };
 
-const getData = (filepath1, filepath2) => {
+const getObjects = (filepath1, filepath2) => {
   const data1 = getFileData(filepath1);
   const data2 = getFileData(filepath2);
   const object1 = JSON.parse(data1);
@@ -16,7 +16,7 @@ const getData = (filepath1, filepath2) => {
 };
 
 const genDiff = (filepath1, filepath2) => {
-  const [object1, object2] = getData(filepath1, filepath2);
+  const [object1, object2] = getObjects(filepath1, filepath2);
   const commonObjects = { ...object1, ...object2 };
   const keys = Object.keys(commonObjects).sort();
   const newObj = {};
