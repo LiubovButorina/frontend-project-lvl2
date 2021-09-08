@@ -23,7 +23,6 @@ const getObjectsData = (data1, data2) => {
 };
 
 const genDiff = (filepath1, filepath2) => {
-  // const [object1, object2] = getFilesData(filepath1, filepath2);
   const [data1, data2] = getFilesData(filepath1, filepath2);
   const [object1, object2] = getObjectsData(data1, data2);
   const commonObjects = { ...object1, ...object2 };
